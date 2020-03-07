@@ -1,19 +1,60 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+<html ng-app="cdg">
+<head>
+	<title>Clube dos Geeks</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
-  </body>
+	<!-- jQuery -->
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<!-- Bootstrap -->
+	<script src="bootstrap/js/bootstrap.js"></script>
+
+	<!-- Angular -->
+	<script src="node_modules/angular/angular.js"></script>
+	<!-- Angular - Pagination -->
+	<script src="node_modules/angular-utils-pagination/dirPagination.js"></script>
+
+	<!-- App -->
+	<script src="app.js"></script>
+
+	<!-- Controllers -->
+	<script src="controllers/pessoaController.js"></script>
+
+	<!-- Services -->
+	<script src="services/dbService.js"></script>
+</head>
+<body>
+	<!-- Menu -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#/">
+					Clube dos Geeks
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      			<ul class="nav navbar-nav">
+      				<li>
+      					<a href="#/pessoas">Pessoas</a>
+      				</li>
+      			</ul>
+      		</div>
+		</div>
+	</nav>
+	<!-- Onde será carregada a view -->
+	<div ng-view="" class="container"></div>
+	<!-- Rodapé -->
+	<nav class="navbar navbar-default navbar-fixed-bottom">
+	  	<div class="container">
+	  		<ul class="nav navbar-nav">
+	  			<li>
+	  				<a href="//clubedosgeeks.com.br">Clube dos Geeks</a>
+	  			</li>
+	  			<li>
+	  				<a href="//jayralencar.com.br">Jayr Alencar</a>
+	  			</li>
+	  		</ul>
+	   	</div>
+	</nav>
+</body>
 </html>
